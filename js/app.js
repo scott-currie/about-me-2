@@ -52,3 +52,30 @@ for (var i = 0; i < questions.length; i++) {
   }
   alert(response);
 }
+// Number guessing logic
+alert('Let\'s play a guessing game. I\'ll think of a number between 1 and 10, and you\'ll try to guess it.');
+var targetNum = Math.random() * 10;
+// This part is not great, but it works to keep the numbers in range without having to learn the right way or copypasta some code 
+if (.5 <= targetNum <= 1.0) {
+  targetNum = 1;
+} else if (targetNum >= 9.5) {
+  targetNum = 10;
+}
+else {
+  targetNum = Math.floor(targetNum);
+}
+console.log(targetNum);
+do {
+  var guess = prompt('What\'s your guess?');
+  if (parseInt(guess) === targetNum) {
+    alert('Nice! You guessed it.');
+    break;
+  } else if (guess < targetNum) {
+    alert('No. Your guess was too low. Try again.'); 
+  } else if (guess > targetNum) {
+    alert('No. Your guess was too high. Try again.');
+  }
+  else {
+    alert('Are you sure that was even a number? Try again.');
+  }
+} while (guess !== targetNum);
