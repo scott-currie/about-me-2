@@ -1,4 +1,5 @@
 'use strict';
+console.log('Is this doing anything?');
 var questions = ['Is it true that my name is Scott?',
                 'Do I have any kids?',
                 'My favorite hobby is rock climbing, correct?',
@@ -24,7 +25,7 @@ var responseData = [];
 var response = '';
 // Loop through all the questions
 for (var i = 0; i < questions.length; i++) {
-  answer = prompt(question[i]);
+  answer = prompt(questions[i]);
   answer = answer.toLowerCase()
   // Turn user's answer into a 'y', 'n', or 'q'
   if ((answer === 'y') || (answer == 'yes')) {
