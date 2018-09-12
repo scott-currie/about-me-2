@@ -21,6 +21,7 @@ var invalidResponse = 'Sorry. I couldn\'t understand your response.';
 var answer = '';
 var responseData = [];
 var response = '';
+var correctAnswers = 0;
 // Loop through all the questions
 for (var i = 0; i < questions.length; i++) {
   answer = prompt(questions[i]);
@@ -44,6 +45,7 @@ for (var i = 0; i < questions.length; i++) {
     // If answer equals key answer at responseData[0], this is a correct answer. Give responseData[1] as response.
     if (answer === responseData[0]) {
       response = responseData[1];
+      correctAnswers++;
     }
     // if it wasn't q and wasn't the key, then response is responseData[2]
     else {
@@ -65,10 +67,12 @@ else {
   targetNum = Math.floor(targetNum);
 }
 console.log(targetNum);
-do {
+var tries = 4;
+while (tries > 0) {
   var guess = prompt('What\'s your guess?');
   if (parseInt(guess) === targetNum) {
     alert('Nice! You guessed it.');
+    correctAnswers++;
     break;
   } else if (guess < targetNum) {
     alert('No. Your guess was too low. Try again.'); 
@@ -78,4 +82,10 @@ do {
   else {
     alert('Are you sure that was even a number? Try again.');
   }
-} while (guess !== targetNum);
+  tries--;
+  if (tries === 0) {
+    alert('Sorry. You\'re out of tries. My number was ' + targetNum);
+  }
+}
+
+
