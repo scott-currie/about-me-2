@@ -24,9 +24,9 @@ var response = '';
 // Loop through all the questions
 for (var i = 0; i < questions.length; i++) {
   answer = prompt(questions[i]);
-  answer = answer.toLowerCase()
+  answer = answer.toLowerCase();
   // Turn user's answer into a 'y', 'n', or 'q'
-  if ((answer === 'y') || (answer == 'yes')) {
+  if ((answer === 'y') || (answer === 'yes')) {
     answer = 'y';
   } else if ((answer === 'n') || (answer === 'no')) {
       answer = 'n';
