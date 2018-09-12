@@ -68,6 +68,7 @@ else {
 }
 console.log(targetNum);
 var tries = 4;
+var msg = '';
 while (tries > 0) {
   var guess = prompt('What\'s your guess?');
   if (parseInt(guess) === targetNum) {
@@ -75,16 +76,22 @@ while (tries > 0) {
     correctAnswers++;
     break;
   } else if (guess < targetNum) {
-    alert('No. Your guess was too low. Try again.'); 
+    // alert('No. Your guess was too low. Try again.');
+    msg = 'No. Your guess was too low.';
   } else if (guess > targetNum) {
-    alert('No. Your guess was too high. Try again.');
+    // alert('No. Your guess was too high. Try again.');
+    msg = 'No. Your gess was too high.';
   }
   else {
-    alert('Are you sure that was even a number? Try again.');
+    // alert('Are you sure that was even a number? Try again.');
+    msg = 'No. Was that even a number?';
   }
   tries--;
   if (tries === 0) {
-    alert('Sorry. You\'re out of tries. My number was ' + targetNum);
+    alert(msg + '\nSorry. You\'re out of tries. My number was ' + targetNum);
+  }
+  else {
+    alert(msg + ' Try again.');
   }
 }
 
