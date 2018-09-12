@@ -26,6 +26,7 @@ var correctAnswers = 0;
 for (var i = 0; i < questions.length; i++) {
   answer = prompt(questions[i]);
   answer = answer.toLowerCase();
+  console.log('Question: ' + i + ', user answer' + answer);
   // Turn user's answer into a 'y', 'n', or 'q'
   if ((answer === 'y') || (answer === 'yes')) {
     answer = 'y';
@@ -46,10 +47,12 @@ for (var i = 0; i < questions.length; i++) {
     if (answer === responseData[0]) {
       response = responseData[1];
       correctAnswers++;
+      console.log('Correct answer. Correct answers so far: ' + correctAnswers);
     }
     // if it wasn't q and wasn't the key, then response is responseData[2]
     else {
       response = responseData[2];
+      console.log('Incorrect answer. Correct answers so far: ' + correctAnswers);
     }
   }
   alert(response);
@@ -57,8 +60,9 @@ for (var i = 0; i < questions.length; i++) {
 // Number guessing logic
 alert('Let\'s play a guessing game. I\'ll think of a number between 1 and 10, and you\'ll try to guess it.');
 var targetNum = Math.random() * 10;
+console.log(targetNum);
 // This part is not great, but it works to keep the numbers in range without having to learn the right way or copypasta some code 
-if (.5 <= targetNum <= 1.0) {
+if (targetNum >= 0 && targetNum < 1.0) {
   targetNum = 1;
 } else if (targetNum >= 9.5) {
   targetNum = 10;
