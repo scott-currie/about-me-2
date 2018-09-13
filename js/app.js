@@ -115,16 +115,23 @@ alert('One more game. I\'ll give you 6 tries to guess one of the top 5 countries
 tries = 6;
 while (tries > 0) {
   guess = prompt('Guess a country: ');
+  console.log('User guess: ' + guess);
   tries--;  
   if (countries.includes(guess.toLowerCase())) {
    alert('Yes! That is one of the countries I\'d like to visit.');
+   console.log('User guess was correct. Correct answers so far: ' + correctAnswers);
    break; 
   }
   else {
     alert('No. That sounds good, but it\'s not in my top 5. You have ' + tries + ' tries remaining.');
+    console.log('User guess was incorrect. Correct answers so far: ' + correctAnswers);
   }
   if (tries === 0) {
     alert('Sorry, but you didn\'t get any guesses correct. My answers were:\n\n' + countries.join(' '));
+    console.log('User failed multiple choice guessing game. Correct answers so far: ' + correctAnswers);
   }
 }
+console.log('Quiz completed. User score: ' + correctAnswers);
+alert('Thanks for playing my quiz. You got ' + correctAnswers + ' out of 7 correct.');
+
 
