@@ -23,6 +23,7 @@ var responseData = [];
 var response = '';
 var msg = '';
 var correctAnswers = 0;
+var visitorName = prompt('Before we get started, please tell me your name.');
 
 // Loop through all the questions
 for (var i = 0; i < questions.length; i++) {
@@ -126,6 +127,6 @@ while (tries > 0) {
   }
 }
 console.log('Quiz completed. User score: ' + correctAnswers);
-alert('Thanks for playing my quiz. You got ' + correctAnswers + ' out of 7 correct.');
+alert('Thanks for playing my quiz, ' + visitorName + '. You got ' + correctAnswers + ' out of 7 correct.');
 
 
