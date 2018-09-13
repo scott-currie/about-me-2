@@ -1,24 +1,24 @@
 'use strict';
 // If any of these questions get changed, change the item in responses at the same index to reflect that
 var questions = ['Is it true that my name is Scott?',
-                'Do I have any kids?',
-                'My favorite hobby is rock climbing, correct?',
-                'Do I prefer pizza over tacos?',
-                'Do you recognize me from my appearance on Law & Order?'
-                ];
+  'Do I have any kids?',
+  'My favorite hobby is rock climbing, correct?',
+  'Do I prefer pizza over tacos?',
+  'Do you recognize me from my appearance on Law & Order?'
+];
 
 // Each array in responses contains the correct answer, the response for correct answers, then the response for incorrect answers
 var responses = [
-                  ['y', 'Yes, that was an easy one to start with.', 'No, sorry. Are you taking this seriously?'],
-                  ['y', 'Yes, that\'s correct. My boys are 10 and 15.', 'No, I a actually do. Surprised?'],
-                  ['n', 'That\'s right. I\'m interested in rock climbing, but haven\'t really done it yet.', 'No, not really. I\'m interested in trying it out, though.'],
-                  ['n', 'That\'s right. Tacos are clearly better than pizza.', 'No, not at all. Pizza is pretty good, but tacos are far superior.'],
-                  ['n', 'You saw right through me. I\'ve never been on TV.', 'Haha! No, that was a trick question. I\'ve never been on TV.']
-                ];
+  ['y', 'Yes, that was an easy one to start with.', 'No, sorry. Are you taking this seriously?'],
+  ['y', 'Yes, that\'s correct. My boys are 10 and 15.', 'No, I a actually do. Surprised?'],
+  ['n', 'That\'s right. I\'m interested in rock climbing, but haven\'t really done it yet.', 'No, not really. I\'m interested in trying it out, though.'],
+  ['n', 'That\'s right. Tacos are clearly better than pizza.', 'No, not at all. Pizza is pretty good, but tacos are far superior.'],
+  ['n', 'You saw right through me. I\'ve never been on TV.', 'Haha! No, that was a trick question. I\'ve never been on TV.']
+];
 
 var invalidResponse = 'Sorry. I couldn\'t understand your response.';
 
-var answer = '';          
+var answer = '';
 var responseData = [];
 var response = '';
 var msg = '';
@@ -35,7 +35,7 @@ for (var i = 0; i < questions.length; i++) {
     answer = 'y';
   } else if ((answer === 'n') || (answer === 'no')) {
     answer = 'n';
-  } 
+  }
   else {
     answer = 'q';
   }
@@ -66,7 +66,7 @@ for (var i = 0; i < questions.length; i++) {
 // Number guessing logic
 alert('Let\'s play a guessing game. I\'ll think of a number between 1 and 10, and you\'ll try to guess it.');
 var targetNum = Math.random() * 10;
-// This part is not great, but it works to keep the numbers in range without having to learn the right way or copypasta some code 
+// This part is not great, but it works to keep the numbers in range without having to learn the right way or copypasta some code
 if (targetNum >= 0 && targetNum < 1.0) {
   targetNum = 1;
 } else if (targetNum >= 9.5) {
@@ -111,11 +111,11 @@ tries = 6;
 while (tries > 0) {
   guess = prompt('Guess a country: ');
   console.log('User guess: ' + guess);
-  tries--;  
+  tries--;
   if (countries.includes(guess.toLowerCase())) {
     alert('Yes! That is one of the countries I\'d like to visit.\n\nAll correct answers were: ' + countries.join(', '));
     console.log('User guess was correct.');
-    break; 
+    break;
   }
   else {
     alert('No. That sounds good, but it\'s not in my top 5. You have ' + tries + ' tries remaining.');
