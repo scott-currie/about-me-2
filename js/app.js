@@ -117,7 +117,8 @@ while (tries > 0) {
   guess = prompt('Guess a country: ');
   tries--;  
   if (countries.includes(guess.toLowerCase())) {
-   alert('Yes. That is one of the countries I\'d like to visit.'); 
+   alert('Yes! That is one of the countries I\'d like to visit.');
+   break; 
   }
   else {
     alert('No. That sounds good, but it\'s not in my top 5. You have ' + tries + ' tries remaining.');
@@ -126,3 +127,4 @@ while (tries > 0) {
     alert('Sorry, but you didn\'t get any guesses correct. My answers were:\n\n' + countries.join(' '));
   }
 }
+
