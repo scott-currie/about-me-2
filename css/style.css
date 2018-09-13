@@ -1,5 +1,10 @@
+* {
+    font-family: monospace;
+    color: rgb(6, 173, 20);
+}
+
 body {
-    background: lightblue;
+    background: #111;
 }
 
 header {
