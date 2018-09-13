@@ -101,7 +101,7 @@ while (tries > 0) {
   }
   else {
     console.log('Incorrect guess. Tries remaining: ' + tries);
-    alert(alertResponse + ' Try again.');
+    alert(alertResponse + ' Try again. You have ' + tries + ' guesses remaining.');
   }
 }
 
