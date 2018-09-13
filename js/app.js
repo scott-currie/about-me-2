@@ -63,6 +63,7 @@ for (var i = 0; i < questions.length; i++) {
   console.log(msg + correctAnswers);
   alert(response);
 }
+
 // Number guessing logic
 alert('Let\'s play a guessing game. I\'ll think of a number between 1 and 10, and you\'ll try to guess it.');
 var targetNum = Math.random() * 10;
@@ -108,4 +109,20 @@ while (tries > 0) {
   }
 }
 
-
+// Multiple choice question
+var countries = ['brazil', 'japan', 'india', 'thailand', 'italy'];
+alert('One more game. I\'ll give you 6 tries to guess one of the top 5 countries I want to visit. Here\'s a hint: I\'ve only been to Canada so far.');
+tries = 6;
+while (tries > 0) {
+  guess = prompt('Guess a country: ');
+  tries--;  
+  if (countries.includes(guess.toLowerCase())) {
+   alert('Yes. That is one of the countries I\'d like to visit.'); 
+  }
+  else {
+    alert('No. That sounds good, but it\'s not in my top 5. You have ' + tries + ' tries remaining.');
+  }
+  if (tries === 0) {
+    alert('Sorry, but you didn\'t get any guesses correct. My answers were:\n\n' + countries.join(' '));
+  }
+}
