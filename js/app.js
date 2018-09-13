@@ -118,16 +118,16 @@ while (tries > 0) {
   console.log('User guess: ' + guess);
   tries--;  
   if (countries.includes(guess.toLowerCase())) {
-   alert('Yes! That is one of the countries I\'d like to visit.');
-   console.log('User guess was correct. Correct answers so far: ' + correctAnswers);
+   alert('Yes! That is one of the countries I\'d like to visit.\n\nAll correct answers were: ' + countries.join(', '));
+   console.log('User guess was correct.');
    break; 
   }
   else {
     alert('No. That sounds good, but it\'s not in my top 5. You have ' + tries + ' tries remaining.');
-    console.log('User guess was incorrect. Correct answers so far: ' + correctAnswers);
+    console.log('User guess was incorrect. Tries remaining: ' + tries);
   }
   if (tries === 0) {
-    alert('Sorry, but you didn\'t get any guesses correct. My answers were:\n\n' + countries.join(' '));
+    alert('Sorry, but you didn\'t get any guesses correct. My answers were:\n\n' + countries.join(', '));
     console.log('User failed multiple choice guessing game. Correct answers so far: ' + correctAnswers);
   }
 }
