@@ -21,7 +21,7 @@ var invalidResponse = 'Sorry. I couldn\'t understand your response.';
 var answer = '';
 var responseData = [];
 var response = '';
-var msg = '';
+var logMsg = '';
 var correctAnswers = 0;
 var visitorName = prompt('Before we get started, please tell me your name.');
 
@@ -43,7 +43,7 @@ for (var i = 0; i < questions.length; i++) {
   // find out if answer is 'q'. That means we know our response already.
   if (answer === 'q') {
     response = invalidResponse;
-    msg = 'Invalid answer. Correct answers so far: ';
+    logMsg = 'Invalid answer. Correct answers so far: ';
   }
   // do the following if answer was not 'q'
   else {
@@ -51,15 +51,15 @@ for (var i = 0; i < questions.length; i++) {
     if (answer === responseData[0]) {
       response = responseData[1];
       correctAnswers++;
-      msg = 'Correct answer. Correct answers so far: ';
+      logMsg = 'Correct answer. Correct answers so far: ';
     }
     // if it wasn't q and wasn't the key, then response is responseData[2]
     else {
       response = responseData[2];
-      msg = 'Incorrect answer. Correct answers so far: ';
+      logMsg = 'Incorrect answer. Correct answers so far: ';
     }
   }
-  console.log(msg + correctAnswers);
+  console.log(logMsg + correctAnswers);
   alert(response);
 }
 
@@ -79,6 +79,7 @@ console.log('Number to guess: ' + targetNum);
 var tries = 4;
 while (tries > 0) {
   var guess = prompt('What\'s your guess?');
+  var alertResponse = '';
   console.log('User guess: ' + guess);
   if (parseInt(guess) === targetNum) {
     alert('Nice! You guessed it.');
@@ -86,21 +87,21 @@ while (tries > 0) {
     console.log('Number guessing game won. Correct answers so far: ' + correctAnswers);
     break;
   } else if (guess < targetNum) {
-    msg = 'No. Your guess was too low.';
+    alertResponse = 'No. Your guess was too low.';
   } else if (guess > targetNum) {
-    msg = 'No. Your gess was too high.';
+    alertResponse = 'No. Your gess was too high.';
   }
   else {
-    msg = 'No. Was that even a number?';
+    alertResponse = 'No. Was that even a number?';
   }
   tries--;
   if (tries === 0) {
     console.log('Number guessing game failed. Correct answers so far: ' + correctAnswers);
-    alert(msg + '\nSorry. You\'re out of tries. My number was ' + targetNum);
+    alert(alertResponse + '\nSorry. You\'re out of tries. My number was ' + targetNum);
   }
   else {
     console.log('Incorrect guess. Tries remaining: ' + tries);
-    alert(msg + ' Try again.');
+    alert(alertResponse + ' Try again.');
   }
 }
 
