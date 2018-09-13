@@ -9,16 +9,16 @@ var questions = ['Is it true that my name is Scott?',
 
 // Each array in responses contains the correct answer, the response for correct answers, then the response for incorrect answers
 var responses = [
-                ['y', 'Yes, that was an easy one to start with.', 'No, sorry. Are you taking this seriously?'],
-                ['y', 'Yes, that\'s correct. My boys are 10 and 15.', 'No, I a actually do. Surprised?'],
-                ['n', 'That\'s right. I\'m interested in rock climbing, but haven\'t really done it yet.', 'No, not really. I\'m interested in trying it out, though.'],
-                ['n', 'That\'s right. Tacos are clearly better than pizza.', 'No, not at all. Pizza is pretty good, but tacos are far superior.'],
-                ['n', 'You saw right through me. I\'ve never been on TV.', 'Haha! No, that was a trick question. I\'ve never been on TV.']
-              ];
+                  ['y', 'Yes, that was an easy one to start with.', 'No, sorry. Are you taking this seriously?'],
+                  ['y', 'Yes, that\'s correct. My boys are 10 and 15.', 'No, I a actually do. Surprised?'],
+                  ['n', 'That\'s right. I\'m interested in rock climbing, but haven\'t really done it yet.', 'No, not really. I\'m interested in trying it out, though.'],
+                  ['n', 'That\'s right. Tacos are clearly better than pizza.', 'No, not at all. Pizza is pretty good, but tacos are far superior.'],
+                  ['n', 'You saw right through me. I\'ve never been on TV.', 'Haha! No, that was a trick question. I\'ve never been on TV.']
+                ];
 
 var invalidResponse = 'Sorry. I couldn\'t understand your response.';
 
-var answer = '';
+var answer = '';          
 var responseData = [];
 var response = '';
 var msg = '';
@@ -33,7 +33,7 @@ for (var i = 0; i < questions.length; i++) {
   if ((answer === 'y') || (answer === 'yes')) {
     answer = 'y';
   } else if ((answer === 'n') || (answer === 'no')) {
-      answer = 'n';
+    answer = 'n';
   } 
   else {
     answer = 'q';
@@ -51,12 +51,10 @@ for (var i = 0; i < questions.length; i++) {
       response = responseData[1];
       correctAnswers++;
       msg = 'Correct answer. Correct answers so far: ';
-      // console.log('Correct answer. Correct answers so far: ' + correctAnswers);
     }
     // if it wasn't q and wasn't the key, then response is responseData[2]
     else {
       response = responseData[2];
-      // console.log('Incorrect answer. Correct answers so far: ' + correctAnswers);
       msg = 'Incorrect answer. Correct answers so far: ';
     }
   }
@@ -78,7 +76,6 @@ else {
 }
 console.log('Number to guess: ' + targetNum);
 var tries = 4;
-// var msg = '';
 while (tries > 0) {
   var guess = prompt('What\'s your guess?');
   console.log('User guess: ' + guess);
@@ -88,14 +85,11 @@ while (tries > 0) {
     console.log('Number guessing game won. Correct answers so far: ' + correctAnswers);
     break;
   } else if (guess < targetNum) {
-    // alert('No. Your guess was too low. Try again.');
     msg = 'No. Your guess was too low.';
   } else if (guess > targetNum) {
-    // alert('No. Your guess was too high. Try again.');
     msg = 'No. Your gess was too high.';
   }
   else {
-    // alert('Are you sure that was even a number? Try again.');
     msg = 'No. Was that even a number?';
   }
   tries--;
@@ -118,9 +112,9 @@ while (tries > 0) {
   console.log('User guess: ' + guess);
   tries--;  
   if (countries.includes(guess.toLowerCase())) {
-   alert('Yes! That is one of the countries I\'d like to visit.\n\nAll correct answers were: ' + countries.join(', '));
-   console.log('User guess was correct.');
-   break; 
+    alert('Yes! That is one of the countries I\'d like to visit.\n\nAll correct answers were: ' + countries.join(', '));
+    console.log('User guess was correct.');
+    break; 
   }
   else {
     alert('No. That sounds good, but it\'s not in my top 5. You have ' + tries + ' tries remaining.');
